@@ -2,9 +2,9 @@ package org.openfact.rest.idm;
 
 import java.math.BigDecimal;
 
-public class SunatDespatchAdviceRepresentation {
-    private PostalAddressRepresentation deliveryAddress;
-    private PostalAddressRepresentation originAddress;
+public class DespatchAdvice {
+    private PostalAddress deliveryAddress;
+    private PostalAddress originAddress;
     private String tipoDocumentoTransportista;
     private String nroDocumentoTransportista;
     private String denominacionTransportista;
@@ -16,19 +16,19 @@ public class SunatDespatchAdviceRepresentation {
     private String unidadMedida;
     private BigDecimal pesoBrutoTotal;
 
-    public PostalAddressRepresentation getDeliveryAddress() {
+    public PostalAddress getDeliveryAddress() {
         return deliveryAddress;
     }
 
-    public void setDeliveryAddress(PostalAddressRepresentation deliveryAddress) {
+    public void setDeliveryAddress(PostalAddress deliveryAddress) {
         this.deliveryAddress = deliveryAddress;
     }
 
-    public PostalAddressRepresentation getOriginAddress() {
+    public PostalAddress getOriginAddress() {
         return originAddress;
     }
 
-    public void setOriginAddress(PostalAddressRepresentation originAddress) {
+    public void setOriginAddress(PostalAddress originAddress) {
         this.originAddress = originAddress;
     }
 

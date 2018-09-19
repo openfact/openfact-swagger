@@ -1,6 +1,6 @@
 package org.openfact.rest.idm;
 
-public class PostalAddressRepresentation {
+public class PostalAddress {
     protected String ubigeo;
     protected String direccion;
     protected String urbanizacion;

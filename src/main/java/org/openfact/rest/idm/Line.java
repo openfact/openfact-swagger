@@ -2,7 +2,7 @@ package org.openfact.rest.idm;
 
 import java.math.BigDecimal;
 
-public class DocumentLineRequestRepresentation {
+public class Line {
 
     protected String unitCode;
     protected BigDecimal cantidad;

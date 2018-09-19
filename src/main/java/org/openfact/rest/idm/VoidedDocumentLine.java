@@ -4,7 +4,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 @ApiModel(description = "Comprobante a dar de baja")
-public class VoidedLineRepresentation {
+public class VoidedDocumentLine {
 
     @ApiModelProperty(
             value = "Código de tipo de documento (Catalogo 01)",

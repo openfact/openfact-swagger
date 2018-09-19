@@ -6,7 +6,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.util.List;
 
 @ApiModel(description = "Modelo para enviar bajas de comprobantes.")
-public class VoidedRepresentation {
+public class VoidedDocument {
 
     @ApiModelProperty(
             value = "Poner true en caso desee enviar a la SUNAT",
@@ -24,7 +24,7 @@ public class VoidedRepresentation {
             value = "Lista de comprobantes a dar de baja",
             required = true
     )
-    private List<VoidedLineRepresentation> detalle;
+    private List<VoidedDocumentLine> detalle;
 
     public boolean isEnviarAutomaticamenteASunat() {
         return enviarAutomaticamenteASunat;
@@ -42,11 +42,11 @@ public class VoidedRepresentation {
         this.observaciones = observaciones;
     }
 
-    public List<VoidedLineRepresentation> getDetalle() {
+    public List<VoidedDocumentLine> getDetalle() {
         return detalle;
     }
 
-    public void setDetalle(List<VoidedLineRepresentation> detalle) {
+    public void setDetalle(List<VoidedDocumentLine> detalle) {
         this.detalle = detalle;
     }
 }

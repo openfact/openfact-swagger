@@ -1,6 +1,7 @@
 package org.openfact.rest.idm;
 
-public class ThirdPartyEmailRepresentation {
+public class ThirdPartyEmail {
+
     private String email;
 
     public String getEmail() {
@@ -10,4 +11,5 @@ public class ThirdPartyEmailRepresentation {
     public void setEmail(String email) {
         this.email = email;
     }
+
 }

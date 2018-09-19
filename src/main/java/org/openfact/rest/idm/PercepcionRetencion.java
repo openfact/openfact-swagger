@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.List;
 
 @ApiModel(description = "Modelo para crear percepciones y retenciones.")
-public class PercepcionRetencionRequestRepresentation {
+public class PercepcionRetencion {
 
     @ApiModelProperty(
             value = "Tipo de documento del cliente (Catálogo 06) - Campo: AdditionalAccountID.",
@@ -113,7 +113,7 @@ public class PercepcionRetencionRequestRepresentation {
     )
     private String observaciones;
 
-    private List<PerceptionRetentionLineRequestRepresentation> detalle;
+    private List<PerceptionRetentionLine> detalle;
 
     public String getEntidadTipoDeDocumento() {
         return entidadTipoDeDocumento;
@@ -243,11 +243,11 @@ public class PercepcionRetencionRequestRepresentation {
         this.fechaDeEmision = fechaDeEmision;
     }
 
-    public List<PerceptionRetentionLineRequestRepresentation> getDetalle() {
+    public List<PerceptionRetentionLine> getDetalle() {
         return detalle;
     }
 
-    public void setDetalle(List<PerceptionRetentionLineRequestRepresentation> detalle) {
+    public void setDetalle(List<PerceptionRetentionLine> detalle) {
         this.detalle = detalle;
     }
 

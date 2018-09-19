@@ -3,7 +3,7 @@ package org.openfact.rest.idm;
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class PerceptionRetentionLineRequestRepresentation {
+public class PerceptionRetentionLine {
 
     private String tipoDocumentoRelacionado;
     private String numeroDocumentoRelacionado;

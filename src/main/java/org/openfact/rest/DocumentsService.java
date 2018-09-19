@@ -1,16 +1,28 @@
 package org.openfact.rest;
 
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
+import io.swagger.annotations.*;
 import org.openfact.rest.idm.*;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+@SwaggerDefinition(
+        securityDefinition = @SecurityDefinition(
+                apiKeyAuthDefinitions = {
+                        @ApiKeyAuthDefinition(key = "keycloak", name = "Authorization", in = ApiKeyAuthDefinition.ApiKeyLocation.HEADER)
+                }
+        )
+)
+
 @Path("/admin/organizations")
-@Api(value = "/admin/organizations", description = "Comprobantes de pago", tags = "comprobantes")
+@Api(
+        value = "/admin/organizations",
+        description = "Comprobantes de pago", tags = "comprobantes",
+        authorizations = {
+                @Authorization(value = "keycloak", scopes = {})
+        }
+)
 @Consumes(MediaType.APPLICATION_JSON)
 public interface DocumentsService {
 
@@ -56,7 +68,7 @@ public interface DocumentsService {
 //    Response sendToCustomThirdParty(
 //            @PathParam("organization") String organization,
 //            @PathParam("id") String id,
-//            ThirdPartyEmailRepresentation thirdParty
+//            ThirdPartyEmail thirdParty
 //    );
 //
 //    @POST
@@ -98,7 +110,7 @@ public interface DocumentsService {
             @ApiParam(value = "Tipo de operación", defaultValue = "true")
             @QueryParam("async") boolean async,
 
-            @ApiParam(value = "Cuerpo del comprobante", required = true) InvoiceRequestRepresentation invoice
+            @ApiParam(value = "Cuerpo del comprobante", required = true) Invoice invoice
     );
 
     @POST
@@ -115,7 +127,7 @@ public interface DocumentsService {
             @ApiParam(value = "Tipo de operación", defaultValue = "true")
             @QueryParam("async") boolean async,
 
-            @ApiParam(value = "Cuerpo del comprobante", required = true) CreditNoteRequestRepresentation creditNote
+            @ApiParam(value = "Cuerpo del comprobante", required = true) CreditNote creditNote
     );
 
     @POST
@@ -132,7 +144,7 @@ public interface DocumentsService {
             @ApiParam(value = "Tipo de operación", defaultValue = "true")
             @QueryParam("async") boolean async,
 
-            @ApiParam(value = "Cuerpo del comprobante", required = true) DebitNoteRequestRepresentation debitNote
+            @ApiParam(value = "Cuerpo del comprobante", required = true) DebitNote debitNote
     );
 
     @POST
@@ -149,7 +161,7 @@ public interface DocumentsService {
             @ApiParam(value = "Tipo de operación", defaultValue = "true")
             @QueryParam("async") boolean async,
 
-            @ApiParam(value = "Cuerpo del comprobante", required = true) PercepcionRetencionRequestRepresentation perception
+            @ApiParam(value = "Cuerpo del comprobante", required = true) Perception perception
     );
 
     @POST
@@ -166,13 +178,13 @@ public interface DocumentsService {
             @ApiParam(value = "Tipo de operación", defaultValue = "true")
             @QueryParam("async") boolean async,
 
-            @ApiParam(value = "Cuerpo del comprobante", required = true) PercepcionRetencionRequestRepresentation retention
+            @ApiParam(value = "Cuerpo del comprobante", required = true) Retention retention
     );
 
     @POST
     @Path("/{organization}/sunat/documents/voided-documents")
-    @ApiOperation(value = "Crear Baja",
-            notes = "Crea una Baja y retorna el comprobante creado",
+    @ApiOperation(value = "Crear VoidedDocument",
+            notes = "Crea una VoidedDocument y retorna el comprobante creado",
             response = DocumentResponseRepresentation.class
     )
     @Produces(MediaType.APPLICATION_JSON)
@@ -183,6 +195,6 @@ public interface DocumentsService {
             @ApiParam(value = "Tipo de operación", defaultValue = "true")
             @QueryParam("async") boolean async,
 
-            @ApiParam(value = "Cuerpo del comprobante", required = true) VoidedRepresentation voidedDocument
+            @ApiParam(value = "Cuerpo del comprobante", required = true) VoidedDocument voidedDocument
     );
 }

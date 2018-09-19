@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
-@ApiModel(subTypes = {InvoiceRequestRepresentation.class, CreditNoteRequestRepresentation.class, DebitNoteRequestRepresentation.class})
+@ApiModel(subTypes = {Invoice.class, CreditNote.class, DebitNote.class})
 public class DocumentRequestRepresentation {
 
     @ApiModelProperty(
@@ -152,7 +152,7 @@ public class DocumentRequestRepresentation {
     @ApiModelProperty(
             value = "Lista de productos o servicios."
     )
-    protected List<DocumentLineRequestRepresentation> detalle;
+    protected List<Line> detalle;
 
     public String getTipo() {
         return tipo;
@@ -338,11 +338,11 @@ public class DocumentRequestRepresentation {
         this.enviarAutomaticamenteAlCliente = enviarAutomaticamenteAlCliente;
     }
 
-    public List<DocumentLineRequestRepresentation> getDetalle() {
+    public List<Line> getDetalle() {
         return detalle;
     }
 
-    public void setDetalle(List<DocumentLineRequestRepresentation> detalle) {
+    public void setDetalle(List<Line> detalle) {
         this.detalle = detalle;
     }
 }

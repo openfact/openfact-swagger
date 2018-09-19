@@ -6,7 +6,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
 
 @ApiModel(description = "Modelo para crear boletas/facturas.")
-public class InvoiceRequestRepresentation extends DocumentRequestRepresentation {
+public class Invoice extends DocumentRequestRepresentation {
 
     @ApiModelProperty(
             value = "Fecha de vencimiento del comprobante.",
@@ -17,7 +17,7 @@ public class InvoiceRequestRepresentation extends DocumentRequestRepresentation 
     @ApiModelProperty(
             value = "Guia de remision asociada al comprobante."
     )
-    protected SunatDespatchAdviceRepresentation despatchAdvice;
+    protected DespatchAdvice despatchAdvice;
 
     public Date getFechaDeVencimiento() {
         return fechaDeVencimiento;
@@ -27,11 +27,11 @@ public class InvoiceRequestRepresentation extends DocumentRequestRepresentation 
         this.fechaDeVencimiento = fechaDeVencimiento;
     }
 
-    public SunatDespatchAdviceRepresentation getDespatchAdvice() {
+    public DespatchAdvice getDespatchAdvice() {
         return despatchAdvice;
     }
 
-    public void setDespatchAdvice(SunatDespatchAdviceRepresentation despatchAdvice) {
+    public void setDespatchAdvice(DespatchAdvice despatchAdvice) {
         this.despatchAdvice = despatchAdvice;
     }
 }

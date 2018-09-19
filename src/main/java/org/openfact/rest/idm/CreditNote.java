@@ -4,7 +4,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 @ApiModel(description = "Modelo para crear notas de crédito.")
-public class CreditNoteRequestRepresentation extends DocumentRequestRepresentation {
+public class CreditNote extends DocumentRequestRepresentation {
 
     @ApiModelProperty(
             value = "Serie y número del comprobante al que se aplica la nota de crédito.",
