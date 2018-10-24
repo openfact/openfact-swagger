@@ -14,7 +14,7 @@ public class CreditNote extends DocumentRequestRepresentation {
 
     @ApiModelProperty(
             value = "Código del tipo de nota de crédito. Catalogo 09",
-            allowableValues = "01,02,03,04,05,06,07",
+            allowableValues = "01, 02, 03, 04, 05, 06, 07",
             example = "01"
     )
     protected String tipoDeNotaDeCredito;

@@ -25,7 +25,14 @@ public class VoidedDocumentLine {
             example = "Error en el monto",
             required = true
     )
-    protected String descripcionDocumentoRelacionado;
+    private String descripcionDocumentoRelacionado;
+
+    @ApiModelProperty(
+            value = "Fecha de emision del comprobante a dar de baja en formato yyyy-MM-dd",
+            example = "2018-10-24",
+            required = true
+    )
+    private String fechaEmision;
 
     public String getTipoDocumentoRelacionado() {
         return tipoDocumentoRelacionado;
@@ -51,4 +58,11 @@ public class VoidedDocumentLine {
         this.descripcionDocumentoRelacionado = descripcionDocumentoRelacionado;
     }
 
+    public String getFechaEmision() {
+        return fechaEmision;
+    }
+
+    public void setFechaEmision(String fechaEmision) {
+        this.fechaEmision = fechaEmision;
+    }
 }

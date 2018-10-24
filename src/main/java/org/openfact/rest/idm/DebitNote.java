@@ -14,7 +14,7 @@ public class DebitNote extends DocumentRequestRepresentation {
 
     @ApiModelProperty(
             value = "Código del tipo de nota de débito. Catalogo 10",
-            allowableValues = "01,02,03",
+            allowableValues = "01, 02, 03",
             example = "01"
     )
     protected String tipoDeNotaDeDebito;

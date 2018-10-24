@@ -11,20 +11,21 @@ import java.util.List;
 public class DocumentRequestRepresentation {
 
     @ApiModelProperty(
-            value = "Código de tipo de documento (Catalogo 01) - Campo: InvoiceTypeCode.",
+            value = "Código de tipo de documento (Catalogo 01). Ejemplos: Boleta=03, Factura=01",
             allowableValues = "01, 03, 07, 08, 09, 20, 40",
+            example = "01",
             required = true
     )
     protected String tipo;
 
     @ApiModelProperty(
-            value = "Serie del comprobante. Debe de tener exactamente 4 dígitos.",
+            value = "Serie del comprobante. Debe de tener exactamente 4 dígitos. Si es boleta la serie debe empezar con la letra B y si es factura la serie debe empezar con la letra F. El sistema generará una serie automáticamente si la serie y número son nulos",
             example = "F001"
     )
     protected String serie;
 
     @ApiModelProperty(
-            value = "Número del comprobante. Debe de tener mínimo:1 y máximo: 8 dígitos.",
+            value = "Número del comprobante. Debe de tener mínimo:1 y máximo: 8 dígitos. El sistema generará una serie automáticamente si la serie y número son nulos",
             example = "1"
     )
     protected String numero;
@@ -37,8 +38,9 @@ public class DocumentRequestRepresentation {
     protected String entidadNumeroDeDocumento;
 
     @ApiModelProperty(
-            value = "Tipo de documento del cliente (Catálogo 06) - Campo: AdditionalAccountID.",
+            value = "Tipo de documento del cliente (Catálogo 06). Ejemplos: DNI=1, RUC=6",
             example = "1",
+            allowableValues = "0, 1, 4, 6, 7, A",
             required = true
     )
     protected String entidadTipoDeDocumento;
@@ -83,69 +85,81 @@ public class DocumentRequestRepresentation {
     protected BigDecimal tipoDeCambio;
 
     @ApiModelProperty(
-            value = "Si la operación es gratuita o no. Usado en caso de donaciones por ejemplo."
+            value = "Si la operación es gratuita o no. Usado en caso de donaciones por ejemplo.",
+            example = "false"
     )
     protected boolean operacionGratuita;
 
     @ApiModelProperty(
             value = "Total de operaciones gravadas.",
-            required = true
+            required = true,
+            example = "16.95"
     )
     protected BigDecimal totalGravada;
 
     @ApiModelProperty(
             value = "Total de operaciones inafectas.",
-            required = true
+            required = true,
+            example = "0"
     )
     protected BigDecimal totalInafecta;
 
     @ApiModelProperty(
             value = "Total de operaciones exoneradas.",
-            required = true
+            required = true,
+            example = "0"
     )
     protected BigDecimal totalExonerada;
 
     @ApiModelProperty(
             value = "Total de operaciones gratuitas.",
-            required = true
+            required = true,
+            example = "0"
     )
     protected BigDecimal totalGratuita;
 
     @ApiModelProperty(
             value = "Monto total de IGV.",
-            required = true
+            required = true,
+            example = "3.05"
     )
     protected BigDecimal totalIgv;
 
     @ApiModelProperty(
-            value = "Descuento Global."
+            value = "Descuento Global.",
+            example = "0"
     )
     protected BigDecimal descuentoGlobal;
 
     @ApiModelProperty(
-            value = "Otros Cargos."
+            value = "Otros Cargos.",
+            example = "0"
     )
     protected BigDecimal totalOtrosCargos;
 
 
     @ApiModelProperty(
             value = "Monto total del comprobante.",
-            required = true
+            required = true,
+            example = "20"
     )
     protected BigDecimal total;
 
     @ApiModelProperty(
-            value = "Observaciones del comprobante."
+            value = "Observaciones del comprobante.",
+            example = "Mis observaciones"
     )
     protected String observaciones;
 
     @ApiModelProperty(
-            value = "true: el comprobante se envia a la SUNAT. false: el comprobante no es enviado a la SUNAT y puede ser editado."
+            value = "true: el comprobante se envia a la SUNAT. false: el comprobante no es enviado a la SUNAT y puede ser editado.",
+            example = "true"
     )
     protected boolean enviarAutomaticamenteASunat;
 
     @ApiModelProperty(
-            value = "Si true: el comprobante se envia al correo especificado en el campo 'entidadEmail'."
+            value = "Si true: el comprobante se envia al correo especificado en el campo 'entidadEmail'.",
+            example = "true"
     )
     protected boolean enviarAutomaticamenteAlCliente;
 
