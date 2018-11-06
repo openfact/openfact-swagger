@@ -1,5 +1,11 @@
 # openfact-java-client
 
+
+### Catalogs
+
+1. [Catalogs part 1](docs/pdf/Catalogos%20Parte%201.pdf)
+1. [Catalogs part 2](docs/pdf/Catalogos%20Parte%202.pdf)
+
 ### Maven users
 
 Add this dependency to your project's POM:
@@ -148,5 +154,10 @@ Authentication schemes defined for the API:
 
 It's recommended to create an instance of `OrganizationClient` per thread in a multithreaded environment to avoid any potential issues.
 
+## More info
+
+All the information you can find here come from our swagger repository:
+
+![swagger](docs/img/swagger.png)
 
 
