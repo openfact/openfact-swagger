@@ -27,6 +27,23 @@ import javax.ws.rs.core.Response;
 public interface DocumentsService {
 
     @GET
+    @Path("/{organization}/documents")
+    @Produces(MediaType.APPLICATION_JSON)
+    @ApiOperation(value = "Buscar comprobantes",
+            notes = "Busca un comprobante de acuerdo a los parámetros especificados",
+            response = SearchResultsRepresentation.class
+    )
+    SearchResultsRepresentation<DocumentResponseRepresentation> getDocuments(
+            @ApiParam(value = "Nombre de la organización", required = true)
+            @PathParam("organization") final String organization,
+
+            @ApiParam(value = "Tipo de documento a buscar", allowableValues = "INVOICE, CREDIT_NOTE, DEBIT_NOTE, VOIDED_DOCUMENTS", example = "INVOICE")
+            @QueryParam("documentType") String documentType,
+
+            @ApiParam(value = "Serie y número de del comprobante a buscar", example = "F001-00000001")
+            @QueryParam("documentId") String documentId);
+
+    @GET
     @Path("/{organization}/documents/{id}")
     @ApiOperation(value = "Obtener comprobante",
             notes = "Retorna un comprobante de pago",
