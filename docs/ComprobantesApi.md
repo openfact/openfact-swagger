@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**createVoidedDocument**](ComprobantesApi.md#createVoidedDocument) | **POST** /admin/organizations/{organization}/sunat/documents/voided-documents | Crear VoidedDocument
 [**getCdr**](ComprobantesApi.md#getCdr) | **GET** /admin/organizations/{organization}/sunat/documents/{id}/cdr | 
 [**getDocumentById**](ComprobantesApi.md#getDocumentById) | **GET** /admin/organizations/{organization}/documents/{id} | Obtener comprobante
+[**getDocuments**](ComprobantesApi.md#getDocuments) | **GET** /admin/organizations/{organization}/documents | Buscar comprobantes
 
 
 <a name="createCreditNote"></a>
